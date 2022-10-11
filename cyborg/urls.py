@@ -7,5 +7,6 @@ from .views import *
 urlpatterns = [
     path('', home, name="home"),
     path('browse/', browse, name="browse"),
-    path('details/', details, name="details")
+    path('details/', details, name="details"),
+    path('streams/', streams, name="streams"),
 ]

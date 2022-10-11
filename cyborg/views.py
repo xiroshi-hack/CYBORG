@@ -10,3 +10,8 @@ def browse(request):
 
 def details(request):
     return render(request, 'includes/details.html')
+    
+
+
+def streams(request):
+    return render(request, 'includes/streams.html')
