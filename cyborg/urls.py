@@ -9,4 +9,5 @@ urlpatterns = [
     path('browse/', browse, name="browse"),
     path('details/', details, name="details"),
     path('streams/', streams, name="streams"),
+    path('profile/', profile, name="profile"),
 ]

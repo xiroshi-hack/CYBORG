@@ -15,3 +15,8 @@ def details(request):
 
 def streams(request):
     return render(request, 'includes/streams.html')
+
+
+
+def profile(request):
+    return render(request, 'includes/profile.html')
