@@ -6,3 +6,7 @@ def home(request):
 
 def browse(request):
     return render(request, 'includes/browse.html')
+
+
+def details(request):
+    return render(request, 'includes/details.html')
