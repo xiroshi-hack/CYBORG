@@ -1,39 +1,64 @@
 {% load static %}
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="{% url 'home' %}" class="logo">
-                        <img src="{% static 'assets/images/logo.png' %}" alt="">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Search End ***** -->
-                    <div class="search-input">
-                      <form id="search" action="#">
-                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
-                        <i class="fa fa-search"></i>
-                      </form>
-                    </div>
-                    
-                    <!-- ***** Search End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'browse' %}">Browse</a></li>
-                        <li><a href="{% url 'details' %}">Details</a></li>
-                        <li><a href="{% url 'streams' %}">Streams</a></li>
-                        <li><a href="{% url 'profile' %}">Profile <img src="{% static 'assets/images/profile-header.jpg' %}" alt=""></a></li>
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- ***** Logo Start ***** -->
+          <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'assets/images/logo.png' %}" alt="">
+          </a>
+          <!-- ***** Logo End ***** -->
+          <!-- ***** Search End ***** -->
+          <div class="search-input">
+            <form id="search" action="#">
+              <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
+                onkeypress="handle" />
+              <i class="fa fa-search"></i>
+            </form>
+          </div>
+
+          <!-- ***** Search End ***** -->
+          <!-- ***** Menu Start ***** -->
+          <ul class="nav">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'browse' %}">Browse</a></li>
+            <li><a href="{% url 'details' %}">Details</a></li>
+            <li><a href="{% url 'streams' %}">Streams</a></li>
+
+
+            {% if request.user.is_organiser %}.
+
+            <li><a href="/admin/">admin</a></li>
+
+            {% endif %}
+
+
+            {% if request.user.is_authenticated %}
+
+            <li><a href="{% url 'logout' %}">log out</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+                  
+
+            {% endif %}
+
+            {% if not request.user.is_authenticated %}
+        
+            <li><a href="{% url 'login' %}">login</a></li>
+            <li><a href="{% url 'signup' %}">sign up</a></li>
+
+            {% endif %}
+
+
+          </ul>
+          <a class='menu-trigger'>
+            <span>Menu</span>
+          </a>
+          <!-- ***** Menu End ***** -->
+        </nav>
+      </div>
     </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->
