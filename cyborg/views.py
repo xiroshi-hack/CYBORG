@@ -37,3 +37,7 @@ def signup(request):
 
 def logout(request):
     return render(request, 'registration/logout.html')
+
+
+def logout_confirmation(request):
+    return render(request, 'registration/logout-confirmation.html')

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1abc9c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btn {
+  border: 5px solid #2c3e50;
+  color: #2c3e50;
+  display: block;
+  font-family: 'trebuchet ms';
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn::before {
+  content: "";
+  background-color: #E26A6A;
+  box-shadow: 10px 10px 0 #F1C40F, 
+              20px 20px 0 #3498DB;
+  position: absolute;
+  left: 0.25rem;
+  top: 0.5rem;
+  height: 102%;
+  width: 102%;
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+.btn:hover::before {
+  box-shadow: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-back{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+    </style>
+</head>
+<body>
+
+
+<a class="home-back" href="{% url 'home' %}"><img width="90px" src="{% static 'img/arrow-90deg-left.svg' %}" alt=""></a>
+    <div class="wrapper">
+        <a href="{% url 'logout' %}" class="btn">confirm your logout</a>
+    </div>
+
+</body>
+</html>
