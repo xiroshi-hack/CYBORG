@@ -1,10 +1,22 @@
+from email import header
+from multiprocessing import context
 from django.shortcuts import render
 from .forms import *
+from .models import *
 from django.shortcuts import redirect
 
 def home(request):
     return render(request, 'pages/home.html')
 
+def index(request):
+    
+    header = Header.objects.all()
+    
+    context = {
+       'header': header
+    }
+    
+    return render(request, 'includes/index.html', context)
 
 def browse(request):
     return render(request, 'includes/browse.html')

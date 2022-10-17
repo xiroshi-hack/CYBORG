@@ -42,13 +42,15 @@ https://templatemo.com/tm-579-cyborg-gaming
           <div class="main-banner">
             <div class="row">
               <div class="col-lg-7">
+                {% for x in header %}
                 <div class="header-text">
-                  <h6>Welcome To Cyborg</h6>
-                  <h4><em>Browse</em> Our Popular Games Here</h4>
+                  <h6>{{ x.title }}</h6>
+                  <h4>{{ x.text }}</h4>
                   <div class="main-button">
-                    <a href="{% url 'browse' %}">Browse Now</a>
+                    <a href="{% url 'browse' %}">{{ x.btn }}</a>
                   </div>
                 </div>
+                {% endfor %}
               </div>
             </div>
           </div>
