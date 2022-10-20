@@ -1,8 +1,7 @@
 from email.policy import default
-from statistics import mode
-from urllib import request
-from django.db import models
+from turtle import title
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 
 class MyUser(AbstractUser):
@@ -15,3 +14,11 @@ class Header(models.Model):
     text = models.CharField(max_length=200, default='BROWSE OUR POPULAR GAMES HERE')
     btn = models.CharField(max_length=50, default='Browse Now')
     
+    def __str__(self):
+        return self.title
+    
+    
+class MostPop(models.Model):
+    img = models.ImageField()
+    title = models.CharField(max_length=100, default='game')
+    text = models.CharField(max_length=100)
