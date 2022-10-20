@@ -5,8 +5,12 @@ from .models import *
 def home(request):
     
     header = Header.objects.all()
+    most = MostPop.objects.all()
     
-    return render(request, 'pages/home.html', {"info":header})
+    return render(request, 'pages/home.html', {
+        "info":header,
+        "most":most
+        })
 
 
 def browse(request):

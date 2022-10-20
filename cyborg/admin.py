@@ -3,3 +3,4 @@ from cyborg.models import *
 
 admin.site.register(MyUser)
 admin.site.register(Header)
+admin.site.register(MostPop)
