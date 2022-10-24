@@ -18,10 +18,11 @@ def home(request):
 def browse(request):
     
     games = Games.objects.all()
-    
+    top = Top.objects.all()
     
     return render(request, 'includes/browse.html', {
         "games": games,
+        "top": top,
     })
 
 

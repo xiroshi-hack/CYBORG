@@ -51,3 +51,10 @@ class Games(models.Model):
     
     def __str__(self):
         return self.name
+    
+
+
+class Top(models.Model):
+    img = models.ImageField()
+    name = models.CharField(max_length=40, default='game name')
+    type = models.CharField(max_length=50, default="sandbox")
