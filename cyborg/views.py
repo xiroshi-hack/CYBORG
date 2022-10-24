@@ -6,10 +6,12 @@ def home(request):
     
     header = Header.objects.all()
     most = MostPop.objects.all()
+    library = Library.objects.all()
     
     return render(request, 'pages/home.html', {
         "info":header,
-        "most":most
+        "most":most,
+        "library":library,
         })
 
 
