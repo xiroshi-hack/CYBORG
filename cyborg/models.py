@@ -1,7 +1,8 @@
 from email.policy import default
-from turtle import title
+from random import choices
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils import timezone
 
 
 class MyUser(AbstractUser):
@@ -22,3 +23,19 @@ class MostPop(models.Model):
     img = models.ImageField()
     title = models.CharField(max_length=100, default='game')
     text = models.CharField(max_length=100)
+    
+
+    
+class Library(models.Model):
+    DOWNLOAD = "download"
+    LOADED = "loaded"    
+    
+    LIBRARY_CHOICES = [
+        (DOWNLOAD, "download"),
+        (LOADED, "loaded")
+    ]
+    
+    img = models.ImageField()
+    game = models.CharField(max_length=50, default='dota')
+    date = models.TimeField(default=timezone.now())
+    type = models.CharField(max_length=10, choices=LIBRARY_CHOICES)
