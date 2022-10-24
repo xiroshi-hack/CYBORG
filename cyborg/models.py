@@ -45,3 +45,9 @@ class Library(models.Model):
     
     
     
+class Games(models.Model):
+    img = models.ImageField()
+    name = models.CharField(max_length=40, default='game name')
+    
+    def __str__(self):
+        return self.name

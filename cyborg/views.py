@@ -16,7 +16,13 @@ def home(request):
 
 
 def browse(request):
-    return render(request, 'includes/browse.html')
+    
+    games = Games.objects.all()
+    
+    
+    return render(request, 'includes/browse.html', {
+        "games": games,
+    })
 
 
 def details(request):
