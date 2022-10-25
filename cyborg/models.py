@@ -1,5 +1,6 @@
 from email.policy import default
 from random import choices
+from turtle import title
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
@@ -58,3 +59,9 @@ class Top(models.Model):
     img = models.ImageField()
     name = models.CharField(max_length=40, default='game name')
     type = models.CharField(max_length=50, default="sandbox")
+    
+
+class LiveStream(models.Model):
+    img = models.ImageField()
+    title = models.CharField(max_length=50)
+    text = models.CharField(max_length=100)
