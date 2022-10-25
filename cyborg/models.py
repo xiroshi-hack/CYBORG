@@ -22,6 +22,9 @@ class MostPop(models.Model):
     title = models.CharField(max_length=100, default='game')
     text = models.CharField(max_length=100)
     
+    def __str__(self):
+        return self.title
+    
 
     
 class Library(models.Model):
