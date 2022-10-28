@@ -17,9 +17,9 @@ def home(request):
 
 def browse(request):
     
-    games = Games.objects.all()
-    top = Top.objects.all()
-    live = LiveStream.objects.all()
+    games = Games.objects.all() 
+    top = Top.objects.all() 
+    live = LiveStream.objects.all() 
     popular = Popular.objects.all()
     
     return render(request, 'includes/browse.html', {
