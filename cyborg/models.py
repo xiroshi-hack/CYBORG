@@ -71,3 +71,12 @@ class LiveStream(models.Model):
     
     def __str__(self):
         return self.title
+    
+class Popular(models.Model):
+    image = models.ImageField()
+    userimg = models.ImageField()
+    username = models.CharField(max_length=100)
+    text = models.CharField(max_length=200)
+
+
+
