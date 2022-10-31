@@ -160,11 +160,11 @@ https://templatemo.com/tm-579-cyborg-gaming
 
 
               
+              {% for popular in popular %}
               <div class="col-lg-3 col-sm-6">
-                {% for popular in stream %}
                 <div class="item">
                   <div class="thumb">
-                    <img src="{{ stream.image }}" alt="">
+                    <img src="{{ popular.image }}" alt="">
                     <div class="hover-effect">
                       <div class="content">
                         <div class="live">
@@ -179,15 +179,15 @@ https://templatemo.com/tm-579-cyborg-gaming
                   </div>
                   <div class="down-content">
                     <div class="avatar">
-                      <img src="{{ stream.userimg }}" alt=""
+                      <img src="{{ popular.userimg }}" alt=""
                         style="max-width: 46px; border-radius: 50%; float: left;">
                     </div>
-                    <span><i class="fa fa-check"></i> {{ stream.username }}</span>
-                    <h4>{{ stream.text }}</h4>
+                    <span><i class="fa fa-check"></i> {{ popular.username }}</span>
+                    <h4>{{ popular.text }}</h4>
                   </div>
                 </div>
-                {% endfor %}
               </div>
+              {% endfor %}
 
 
 
