@@ -87,8 +87,8 @@ https://templatemo.com/tm-579-cyborg-gaming
               <div class="col-lg-12">
                 <div class="content">
                   <div class="row">
+                    {% for detal in detal %}
                     <div class="col-lg-6">
-                      {% for detal in detal %}
                       <div class="left-info">
                         <div class="left">
                           <h4>{{ detal.game }}</h4>
@@ -99,8 +99,14 @@ https://templatemo.com/tm-579-cyborg-gaming
                           <li><i class="fa fa-download"></i> 2.3M</li>
                         </ul>
                       </div>
-                      {% endfor %}
                     </div>
+                    {% endfor %}
+
+
+                    {% for bottom in bottom %}
+
+
+
                     <div class="col-lg-6">
                       <div class="right-info">
                         <ul>
@@ -112,22 +118,25 @@ https://templatemo.com/tm-579-cyborg-gaming
                       </div>
                     </div>
                     <div class="col-lg-4">
-                      <img src="{% static 'assets/images/details-01.jpg' %}" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="{{ bottom.img1.url }}" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-4">
-                      <img src="{% static 'assets/images/details-02.jpg' %}" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="{{ bottom.img2.url }}" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-4">
-                      <img src="{% static 'assets/images/details-03.jpg' %}" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="{{ bottom.img3.url }}" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-12">
-                      <p>Cyborg Gaming is free HTML CSS website template provided by TemplateMo. This is Bootstrap v5.2.0 layout. You can make a <a href="https://paypal.me/templatemo" target="_blank">small contribution via PayPal</a> to info [at] templatemo.com and thank you for supporting. If you want to get the PSD source files, please contact us. Lorem ipsum dolor sit consectetur es dispic dipiscingei elit, sed doers eiusmod lisum hored tempor.</p>
+                      <p>{{ bottom.text }}</p>
                     </div>
                     <div class="col-lg-12">
                       <div class="main-border-button">
-                        <a href="#">Download Fortnite Now!</a>
+                        <a href="#">{{ bottom.btn }}</a>
                       </div>
                     </div>
+
+                    {% endfor  %}
+
                   </div>
                 </div>
               </div>

@@ -98,3 +98,12 @@ class Detal(models.Model):
     
     game = models.CharField(max_length=100)
     type = models.CharField(max_length=8, choices=CHOICES)
+
+    
+class BottomOutsite(models.Model):
+    
+    img1 = models.ImageField()
+    img2 = models.ImageField()
+    img3 = models.ImageField()
+    text = models.CharField(max_length=500)
+    btn = models.CharField(max_length=100)
