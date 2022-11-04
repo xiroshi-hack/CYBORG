@@ -85,3 +85,16 @@ class Detailss(models.Model):
     video = models.ImageField()
     
     
+    
+class Detal(models.Model):
+    
+    PUBG = "pubg"
+    SANDBOX = "sandbox"    
+    
+    CHOICES = [
+        (PUBG, "pubg"),
+        (SANDBOX, "sandbox")
+    ]
+    
+    game = models.CharField(max_length=100)
+    type = models.CharField(max_length=8, choices=CHOICES)

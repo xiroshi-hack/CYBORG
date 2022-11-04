@@ -88,16 +88,18 @@ https://templatemo.com/tm-579-cyborg-gaming
                 <div class="content">
                   <div class="row">
                     <div class="col-lg-6">
+                      {% for detal in detal %}
                       <div class="left-info">
                         <div class="left">
-                          <h4>Fortnite</h4>
-                          <span>Sandbox</span>
+                          <h4>{{ detal.game }}</h4>
+                          <span>{{ detal.type }}</span>
                         </div>
                         <ul>
                           <li><i class="fa fa-star"></i> 4.8</li>
                           <li><i class="fa fa-download"></i> 2.3M</li>
                         </ul>
                       </div>
+                      {% endfor %}
                     </div>
                     <div class="col-lg-6">
                       <div class="right-info">

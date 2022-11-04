@@ -35,11 +35,13 @@ def browse(request):
 def details(request):
     
     detailss = Detailss.objects.all()
+    detal = Detal.objects.all()
     
     
 
     return render(request, 'includes/details.html',{
         "detailss":detailss,
+        "detal":detal,
     })
 
     
