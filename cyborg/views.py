@@ -37,6 +37,7 @@ def details(request):
     detailss = Detailss.objects.all()
     detal = Detal.objects.all()
     bottom = BottomOutsite.objects.all()
+    related = Related.objects.all()
     
     
 
@@ -44,6 +45,7 @@ def details(request):
         "detailss":detailss,
         "detal":detal,
         "bottom":bottom,
+        "related":related,
     })
 
     
