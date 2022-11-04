@@ -107,3 +107,21 @@ class BottomOutsite(models.Model):
     img3 = models.ImageField()
     text = models.CharField(max_length=500)
     btn = models.CharField(max_length=100)
+    
+    
+    
+class Related(models.Model):
+    
+    
+    PUBG = "pubg"
+    SANDBOX = "sandbox"    
+    
+    CHOICES = [
+        (PUBG, "pubg"),
+        (SANDBOX, "sandbox")
+    ]
+    
+    
+    img = models.ImageField()
+    game = models.CharField(max_length=100)
+    type = models.CharField(max_length=8, choices=CHOICES)
