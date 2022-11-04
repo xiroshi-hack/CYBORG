@@ -80,3 +80,8 @@ class Popular(models.Model):
 
 
 
+class Detailss(models.Model):
+    img = models.ImageField()
+    video = models.ImageField()
+    
+    

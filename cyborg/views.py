@@ -30,8 +30,18 @@ def browse(request):
     })
 
 
+
+
 def details(request):
-    return render(request, 'includes/details.html')
+    
+    detailss = Detailss.objects.all()
+    
+    
+
+    return render(request, 'includes/details.html',{
+        "detailss":detailss,
+    })
+
     
 
 
